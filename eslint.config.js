@@ -27,7 +27,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['backend/**/*.js'],
+    files: ['backend/**/*.js', 'api/**/*.js'],
     extends: [js.configs.recommended],
     languageOptions: {
       ecmaVersion: 'latest',

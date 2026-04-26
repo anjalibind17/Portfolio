@@ -1,4 +1,5 @@
 import { FaLightbulb, FaPaintBrush, FaCode, FaReact, FaServer, FaDatabase, FaRobot, FaSearch, FaShieldAlt, FaShoppingBag, FaNodeJs } from 'react-icons/fa'
+import { SiCodechef, SiCodeforces, SiLeetcode } from 'react-icons/si'
 
 import profileImg from './profile.png'
 import projectImg1 from './project1.avif'
@@ -133,6 +134,42 @@ export const projects = [
     ],
     demo: '#',
     code: 'https://github.com/anjalibind17',
+  },
+]
+
+export const codingPlatforms = [
+  {
+    name: 'LeetCode',
+    icon: SiLeetcode,
+    profile: 'https://leetcode.com/u/anjalibind15/',
+    handle: 'anjalibind15',
+    solved: 'Auto update',
+    rating: 'Auto update',
+    highlight: 'Track DSA problems, streaks, and contest progress.',
+    stats: ['Problems Solved', 'Contest Rating', 'Global Rank'],
+    color: 'text-yellow-400',
+  },
+  {
+    name: 'CodeChef',
+    icon: SiCodechef,
+    profile: 'https://www.codechef.com/users/anjali_bind17',
+    handle: 'anjali_bind17',
+    solved: 'Auto update',
+    rating: 'Auto update',
+    highlight: 'Keep competitive programming ratings and contest records in one place.',
+    stats: ['Stars', 'Rating', 'Best Rank'],
+    color: 'text-orange-300',
+  },
+  {
+    name: 'Codeforces',
+    icon: SiCodeforces,
+    profile: 'https://codeforces.com/profile/anjalibind17',
+    handle: 'anjalibind17',
+    solved: 'Auto update',
+    rating: 'Auto update',
+    highlight: 'Show Codeforces handle, rating history, and regular practice growth.',
+    stats: ['Current Rating', 'Max Rating', 'Problems Solved'],
+    color: 'text-sky-300',
   },
 ]
 

@@ -3,6 +3,7 @@ import { Hero } from '../components/Hero'
 import { About } from '../components/About'
 import { Skills } from '../components/Skills'
 import { Projects } from '../components/Projects'
+import { CodingPlatforms } from '../components/CodingPlatforms'
 import { Experience } from '../components/Experience'
 import { Contact } from '../components/Contact'
 import { Footer } from '../components/Footer'
@@ -14,6 +15,7 @@ export const Home = () => {
       <About />
       <Skills />
       <Projects />
+      <CodingPlatforms />
       <Experience />
       <Contact />
       <Footer />

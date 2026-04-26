@@ -25,6 +25,7 @@ export const api = {
   getProjects: () => request('/api/projects'),
   getSkills: () => request('/api/skills'),
   getExperience: () => request('/api/experience'),
+  getCodingPlatforms: () => request('/api/coding-platforms'),
   sendMessage: (message) => request('/api/contact', {
     method: 'POST',
     body: JSON.stringify(message),

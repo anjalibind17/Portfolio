@@ -112,7 +112,7 @@ export const projects = [
       'Added smooth animations and modern styling for a polished personal brand presentation.',
       'Structured project data and reusable components for easy future updates.',
     ],
-    demo: 'https://anjali-portfolio.vercel.app/',
+    demo: 'https://anjali-b-portfolio.vercel.app/',
     code: 'https://github.com/anjalibind17/Portfolio',
   },
   {

@@ -25,7 +25,7 @@ export const Navbar = () => {
 
         <div className="portfolio-nav-links hidden items-center md:flex">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="font-bold text-white/70 transition hover:text-white">
+            <a key={item.href} href={item.href} className="portfolio-nav-link relative font-bold text-white transition after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:rounded-full after:bg-purple after:transition-all hover:after:w-full">
               {item.label}
             </a>
           ))}

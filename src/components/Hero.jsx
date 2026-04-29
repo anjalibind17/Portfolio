@@ -8,6 +8,7 @@ export const Hero = () => {
     'Frontend Developer',
     'Full Stack Developer',
     'Backend Developer',
+    'Cybersecurity Enthusiast',
     'DSA Enthusiast',
   ], [])
 
@@ -86,7 +87,7 @@ export const Hero = () => {
             <Motion.img
               src={assets.profileImg}
               alt="Profile"
-              className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover z-10 animate-float"
+              className="relative rounded-full w-64 h-64 md:w-80 md:h-80 object-cover object-[center_28%] z-10 animate-float"
               style={{ transform: 'translateY(-5.39253px)' }}
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}

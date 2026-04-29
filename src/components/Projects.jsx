@@ -41,7 +41,7 @@ export const Projects = () => {
                 viewport={{ once: true }}
                 className="group flex h-full flex-col overflow-hidden rounded-xl border border-purple/45 bg-dark-300 shadow-lg shadow-purple/10 outline-none transition duration-300 hover:-translate-y-1 hover:border-pink hover:shadow-xl hover:shadow-pink/20 focus:border-pink"
               >
-                <div className="relative h-32 overflow-hidden">
+                <div className="relative h-44 overflow-hidden">
                   <img src={image} alt={project.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple/45 via-transparent to-transparent opacity-80 transition duration-300 group-hover:from-pink/60" />
                   <button
@@ -118,7 +118,7 @@ export const Projects = () => {
             className="max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-purple/50 bg-dark-300 shadow-2xl shadow-black/40"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-56 overflow-hidden">
               <img src={selectedProject.image} alt={selectedProject.title} className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-300 via-dark-300/25 to-transparent" />
               <button

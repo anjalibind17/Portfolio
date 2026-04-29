@@ -2,12 +2,6 @@ import { FaLightbulb, FaPaintBrush, FaCode, FaReact, FaServer, FaDatabase, FaRob
 import { SiCodechef, SiCodeforces, SiLeetcode } from 'react-icons/si'
 
 import profileImg from './profile.png'
-import projectImg1 from './project1.avif'
-import projectImg2 from './project2.avif'
-import projectImg3 from './project3.avif'
-import projectImg4 from './project4.avif'
-import projectImg5 from './project5.avif'
-import projectImg6 from './project6.avif'
 
 export const assets = {
   profileImg,
@@ -59,7 +53,7 @@ export const projects = [
   {
     title: 'Axis AI',
     description: 'AI-powered career guidance platform with ATS resume analysis, personalized roadmaps, real-time AI chat, and mock interviews.',
-    image: projectImg5,
+    image: '/axis.avif',
     tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Clerk', 'Gemini API'],
     icons: [FaRobot, FaReact, FaNodeJs],
     highlights: [
@@ -67,13 +61,13 @@ export const projects = [
       'Integrated Gemini API with prompt engineering, context-aware responses, and structured JSON parsing.',
       'Built a secure RESTful backend with JWT/Clerk authentication, session management, and MongoDB data handling.',
     ],
-    demo: 'https://github.com/anjalibind17/axis-ai-career',
-    code: 'https://github.com/anjalibind17/axis-ai-career',
+    demo: 'https://axis-ai.vercel.app',
+    code: 'https://github.com/anjalibind17/axis-ai-premium',
   },
   {
     title: 'DesiDeal',
     description: 'Scalable full-stack e-commerce platform with secure authentication, optimized product browsing, seller tools, and checkout workflows.',
-    image: projectImg1,
+    image: '/desi.webp',
     tech: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Clerk', 'Inngest'],
     icons: [FaShoppingBag, FaReact, FaDatabase],
     highlights: [
@@ -85,9 +79,46 @@ export const projects = [
     code: 'https://github.com/anjalibind17/DesiDeal',
   },
   {
+    title: 'Project Management',
+    description: 'A project management web app for organizing tasks, tracking progress, and managing team workflows efficiently.',
+    image: '/project.jpg',
+    tech: ['React.js', 'Redux Toolkit', 'JavaScript', 'Tailwind CSS', 'Routing'],
+    icons: [FaReact, FaServer, FaDatabase],
+    highlights: [
+      'Created task and project workflows for tracking work across different stages.',
+      'Designed clean dashboards for project visibility, progress monitoring, and team coordination.',
+      'Built reusable frontend and backend structure for scalable project features.',
+    ],
+    demo: 'https://project-management-dashboard-anjali.vercel.app/',
+    code: 'https://github.com/anjalibind17/project-management-dashboard',
+  },
+  {
+    title: 'SearchImage',
+    description: 'A simple image search web app using the Unsplash API with image preview, external open, and direct download support.',
+    image: '/search.jpg',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Unsplash API'],
+    icons: [FaSearch, FaRobot, FaReact],
+    demo: 'https://search-image-peach.vercel.app',
+    code: 'https://github.com/anjalibind17/SearchImage',
+  },
+  {
+    title: 'Portfolio',
+    description: 'A responsive personal portfolio website showcasing skills, projects, experience, and contact details with a polished UI.',
+    image: '/port.jpg',
+    tech: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Responsive UI'],
+    icons: [FaReact, FaPaintBrush, FaCode],
+    highlights: [
+      'Built a responsive portfolio layout with hero, skills, projects, experience, and contact sections.',
+      'Added smooth animations and modern styling for a polished personal brand presentation.',
+      'Structured project data and reusable components for easy future updates.',
+    ],
+    demo: 'https://anjali-portfolio.vercel.app/',
+    code: 'https://github.com/anjalibind17/Portfolio',
+  },
+  {
     title: 'AI-Network-Intrusion-Detection',
     description: 'Cybersecurity project for detecting network intrusion patterns and analyzing malicious traffic with machine learning workflows.',
-    image: projectImg4,
+    image: '/intrusion.jpg',
     tech: ['Python', 'Machine Learning', 'Cybersecurity', 'Data Analysis'],
     icons: [FaShieldAlt, FaDatabase, FaCode],
     highlights: [
@@ -98,43 +129,6 @@ export const projects = [
     demo: 'https://ai-network-intrusion-detection-vfgvzwebx87mi8g4ktgglq.streamlit.app/',
     code: 'https://github.com/anjalibind17/AI-Network-Intrusion-Detection',
   },
-  {
-    title: 'SearchImage',
-    description: 'A simple image search web app using the Unsplash API with image preview, external open, and direct download support.',
-    image: projectImg6,
-    tech: ['HTML', 'CSS', 'JavaScript', 'Unsplash API'],
-    icons: [FaSearch, FaRobot, FaReact],
-    demo: 'https://search-image-peach.vercel.app',
-    code: 'https://github.com/anjalibind17/SearchImage',
-  },
-  {
-    title: 'Portfolio',
-    description: 'A responsive personal portfolio website showcasing skills, projects, experience, and contact details with a polished UI.',
-    image: projectImg2,
-    tech: ['React.js', 'Tailwind CSS', 'Framer Motion', 'Responsive UI'],
-    icons: [FaReact, FaPaintBrush, FaCode],
-    highlights: [
-      'Built a responsive portfolio layout with hero, skills, projects, experience, and contact sections.',
-      'Added smooth animations and modern styling for a polished personal brand presentation.',
-      'Structured project data and reusable components for easy future updates.',
-    ],
-    demo: '#',
-    code: 'https://github.com/anjalibind17',
-  },
-  {
-    title: 'Project Management',
-    description: 'A project management web app for organizing tasks, tracking progress, and managing team workflows efficiently.',
-    image: projectImg3,
-    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
-    icons: [FaReact, FaServer, FaDatabase],
-    highlights: [
-      'Created task and project workflows for tracking work across different stages.',
-      'Designed clean dashboards for project visibility, progress monitoring, and team coordination.',
-      'Built reusable frontend and backend structure for scalable project features.',
-    ],
-    demo: '#',
-    code: 'https://github.com/anjalibind17',
-  },
 ]
 
 export const codingPlatforms = [
@@ -143,8 +137,9 @@ export const codingPlatforms = [
     icon: SiLeetcode,
     profile: 'https://leetcode.com/u/anjalibind15/',
     handle: 'anjalibind15',
-    solved: 'Auto update',
-    rating: 'Auto update',
+    solved: 188,
+    rating: 1640,
+    rank: 823993,
     highlight: 'Track DSA problems, streaks, and contest progress.',
     stats: ['Problems Solved', 'Contest Rating', 'Global Rank'],
     color: 'text-yellow-400',
@@ -154,8 +149,9 @@ export const codingPlatforms = [
     icon: SiCodechef,
     profile: 'https://www.codechef.com/users/anjali_bind17',
     handle: 'anjali_bind17',
-    solved: 'Auto update',
-    rating: 'Auto update',
+    solved: 246,
+    rating: 1224,
+    highestRating: 1503,
     highlight: 'Keep competitive programming ratings and contest records in one place.',
     stats: ['Stars', 'Rating', 'Best Rank'],
     color: 'text-orange-300',
@@ -165,8 +161,9 @@ export const codingPlatforms = [
     icon: SiCodeforces,
     profile: 'https://codeforces.com/profile/anjalibind17',
     handle: 'anjalibind17',
-    solved: 'Auto update',
-    rating: 'Auto update',
+    solved: 13,
+    rating: 1044,
+    maxRating: 1044,
     highlight: 'Show Codeforces handle, rating history, and regular practice growth.',
     stats: ['Current Rating', 'Max Rating', 'Problems Solved'],
     color: 'text-sky-300',

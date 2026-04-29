@@ -5,7 +5,7 @@ import { codingPlatforms } from '../assets/assets'
 import { api } from '../lib/api'
 import { SectionHeading } from './SectionHeading'
 
-const formatValue = (value, fallback = 'Updating') => {
+const formatValue = (value, fallback = 'Not available') => {
   if (value === null || value === undefined || value === '') return fallback
   return value.toLocaleString ? value.toLocaleString('en-IN') : value
 }
@@ -69,7 +69,7 @@ export const CodingPlatforms = () => {
             const stats = liveStats[platform.name] || {}
             const solved = formatValue(stats.solved, platform.solved)
             const rating = formatValue(stats.rating, platform.rating)
-            const extraStat = formatValue(getExtraStat(platform.name, stats), 'Auto update')
+            const extraStat = formatValue(getExtraStat(platform.name, stats), getExtraStat(platform.name, platform))
 
             return (
               <Motion.article

@@ -13,7 +13,7 @@ const messagesFile = path.join(dataDir, 'messages.json')
 
 const profile = {
   name: 'Anjali Bind',
-  roles: ['Frontend Developer', 'Full Stack Developer', 'Backend Developer', 'DSA Enthusiast'],
+  roles: ['Frontend Developer', 'Full Stack Developer', 'Backend Developer', 'Cybersecurity Enthusiast', 'DSA Enthusiast'],
   tagline: 'I create fast, responsive, and polished web experiences with React, Node.js, and thoughtful UI design.',
 }
 
@@ -114,16 +114,25 @@ const platformProfiles = [
     name: 'LeetCode',
     handle: 'anjalibind15',
     profile: 'https://leetcode.com/u/anjalibind15/',
+    solved: 188,
+    rating: 1640,
+    rank: 823993,
   },
   {
     name: 'CodeChef',
     handle: 'anjali_bind17',
     profile: 'https://www.codechef.com/users/anjali_bind17',
+    solved: 246,
+    rating: 1224,
+    highestRating: 1503,
   },
   {
     name: 'Codeforces',
     handle: 'anjalibind17',
     profile: 'https://codeforces.com/profile/anjalibind17',
+    solved: 13,
+    rating: 1044,
+    maxRating: 1044,
   },
 ]
 
@@ -154,6 +163,12 @@ const fetchText = async (url) => {
 const readBetween = (text, pattern) => {
   const match = text.match(pattern)
   return match ? match[1].trim() : null
+}
+
+const toNumber = (value) => {
+  if (value === null || value === undefined || value === '') return null
+  const number = Number(String(value).replace(/,/g, '').replace(/[^\d.]/g, ''))
+  return Number.isFinite(number) ? number : null
 }
 
 const getCodeChefStars = (rating) => {
@@ -215,21 +230,21 @@ const getCodeChefStats = async ({ handle, name, profile }) => {
   const html = await fetchText(profile)
   const rating = readBetween(html, /class="rating-number">([^<]+)</)
   const stars = readBetween(html, /class="rating-star">([^<]+)</)
-  const highestRating = readBetween(html, /Highest Rating\s*(\d+)/i)
-  const solved = readBetween(html, /Total Problems Solved[^0-9]*(\d+)/i)
-  const rank = readBetween(html, /Global Rank[^0-9]*(\d+)/i)
-  const numericRating = rating ? Number(rating.replace(/\D/g, '')) : null
-  const numericHighestRating = highestRating ? Number(highestRating) : null
+  const highestRating = readBetween(html, /Highest Rating[\s\S]*?(\d{3,5})/i)
+  const solved = readBetween(html, /Total Problems Solved[\s\S]*?(\d+)/i)
+  const rank = readBetween(html, /Global Rank[\s\S]*?([\d,]+)/i)
+  const numericRating = toNumber(rating)
+  const numericHighestRating = toNumber(highestRating)
 
   return {
     name,
     handle,
     profile,
-    solved: solved ? Number(solved) : null,
+    solved: toNumber(solved),
     rating: numericRating,
-    highestRating: Math.max(numericHighestRating || 0, numericRating || 0, 1503),
+    highestRating: numericHighestRating || numericRating,
     stars: stars || getCodeChefStars(numericRating),
-    rank: rank ? Number(rank) : null,
+    rank: toNumber(rank),
   }
 }
 
@@ -273,9 +288,6 @@ const getCodingPlatformStats = async () => {
 
     return {
       ...platformProfiles[index],
-      solved: null,
-      rating: null,
-      rank: null,
       error: 'Stats unavailable right now',
     }
   })
@@ -353,6 +365,7 @@ const server = http.createServer(async (request, response) => {
     if (method === 'GET' && url === '/api/experience') return sendJson(response, 200, { experience })
     if (method === 'GET' && url === '/api/coding-platforms') {
       const platforms = await getCodingPlatformStats()
+      response.setHeader('Cache-Control', 'no-store, max-age=0')
       return sendJson(response, 200, {
         platforms,
         updatedAt: new Date().toISOString(),

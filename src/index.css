@@ -81,6 +81,10 @@ section {
   font-size: clamp(18px, 1.1vw, 21px);
 }
 
+.portfolio-nav-link:hover {
+  color: var(--color-purple);
+}
+
 .portfolio-hero {
   background: radial-gradient(circle at 50% 50%, #292929 0%, #202020 38%, #171717 72%);
   padding: 86px clamp(32px, 7.85vw, 151px) 0;

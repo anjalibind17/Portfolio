@@ -4,6 +4,12 @@ import { motion as Motion } from 'framer-motion'
 import { api } from '../lib/api'
 import { SectionHeading } from './SectionHeading'
 
+const contactLinks = {
+  phone: '+917905041308',
+  github: 'https://github.com/anjalibind17',
+  linkedin: 'https://www.linkedin.com/in/anjali-bind-2492a8287/',
+}
+
 const initialForm = {
   name: '',
   email: '',
@@ -104,15 +110,21 @@ export const Contact = () => {
           >
             <div className="space-y-5">
               {[
-                [FaLocationDot, 'Location', 'India, open to remote work'],
-                [FaEnvelope, 'Email', 'abind0173@gmail.com'],
-                [FaPhone, 'Phone', '+1 (555) 123-4567'],
-              ].map(([icon, title, value]) => (
+                [FaLocationDot, 'Location', 'India, open to anywhere work'],
+                [FaEnvelope, 'Email', 'abind0173@gmail.com', 'mailto:abind0173@gmail.com'],
+                [FaPhone, 'Phone', '+91 79050 41308', `tel:${contactLinks.phone}`],
+              ].map(([icon, title, value, href]) => (
                 <div key={title} className="flex gap-4">
                   {React.createElement(icon, { className: 'mt-1 text-2xl text-white' })}
                   <div>
                     <h3 className="text-lg font-black">{title}</h3>
-                    <p className="mt-1.5 text-base text-slate-300">{value}</p>
+                    {href ? (
+                      <a href={href} className="mt-1.5 inline-block text-base text-slate-300 transition hover:text-purple">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="mt-1.5 text-base text-slate-300">{value}</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -120,9 +132,14 @@ export const Contact = () => {
 
             <h3 className="mt-6 text-lg font-black">Follow Me</h3>
             <div className="mt-3 flex gap-3">
-              {[FaGithub, FaLinkedin, FaTwitter, FaDribbble].map((Icon, index) => (
-                <a key={index} href="#" className="grid h-10 w-10 place-items-center rounded-full bg-dark-300 text-base text-white transition hover:bg-purple">
-                  <Icon />
+              {[
+                { icon: FaGithub, href: contactLinks.github, label: 'GitHub' },
+                { icon: FaLinkedin, href: contactLinks.linkedin, label: 'LinkedIn' },
+                { icon: FaTwitter, href: '#', label: 'Twitter' },
+                { icon: FaDribbble, href: '#', label: 'Dribbble' },
+              ].map(({ icon, href, label }) => (
+                <a key={label} href={href} target={href === '#' ? undefined : '_blank'} rel={href === '#' ? undefined : 'noreferrer'} aria-label={label} className="grid h-10 w-10 place-items-center rounded-full bg-dark-300 text-base text-white transition hover:bg-purple">
+                  {React.createElement(icon)}
                 </a>
               ))}
             </div>

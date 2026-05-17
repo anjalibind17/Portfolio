@@ -90,7 +90,7 @@ export const projects = [
       'Built reusable frontend and backend structure for scalable project features.',
     ],
     demo: 'https://project-management-dashboard-anjali.vercel.app/',
-    code: 'https://github.com/anjalibind17/project-management-dashboard',
+    code: 'https://github.com/anjalibind17/Project-Management-Dashboard',
   },
   {
     title: 'SearchImage',

@@ -61,8 +61,8 @@ export const projects = [
       'Integrated Gemini API with prompt engineering, context-aware responses, and structured JSON parsing.',
       'Built a secure RESTful backend with JWT/Clerk authentication, session management, and MongoDB data handling.',
     ],
-    demo: 'https://axis-ai.vercel.app',
-    code: 'https://github.com/anjalibind17/axis-ai-premium',
+    demo: 'https://axis-ai-career.vercel.app/',
+    code: 'https://github.com/anjalibind17/Axis-AI',
   },
   {
     title: 'DesiDeal',
